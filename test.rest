@@ -1,0 +1,87 @@
+GET http://localhost:8080/products
+
+###
+
+GET http://localhost:8080/Kitchen_and_home_appliances
+
+###
+
+GET http://localhost:8080/laptop
+
+###
+
+GET http://localhost:8080/tv
+
+###
+
+GET http://localhost:8080/washing_machines_and_dryers
+
+###
+
+POST http://localhost:8080/products
+Content-Type: application/json
+
+{
+    "id":57,
+    "name":"bomboklat",
+    "price":100000,
+    "description":"party up!!",
+    "category":"tv",
+    "pictur1":"https://media.istockphoto.com/photos/cheering-crowd-with-hands-in-air-at-music-festival-picture-id1247853982?b=1&k=20&m=1247853982&s=170667a&w=0&h=sWNEepgWwrm1gH288XfI4uCV0xI6ZZ65aXsshxEiUv4=",
+    "pictur2":"https://media.istockphoto.com/photos/dancing-friends-picture-id501387734?b=1&k=20&m=501387734&s=170667a&w=0&h=TVaT6l5ApnSxVDgP0027JimUnUfbJYkBRCcVA2DGXg8="
+}
+
+###
+
+PATCH http://localhost:8080/products/6181a39cd15dc271af9211b3
+Content-Type: application/json
+
+{
+    "name":"big ice machin"
+}
+
+###
+
+DELETE http://localhost:8080/products/6181a39cd15dc271af9211b3
+
+###
+
+POST http://localhost:8080/contact
+Content-Type: application/json
+
+{
+    "firstName": "shmuel",
+    "lastName": "moche",
+    "phoneNumber":"0546074968",
+    "email":"shmuelmoche@gmail.com",
+    "message":"info about a product"
+}
+
+###
+
+GET http://localhost:8080/contact
+
+###
+
+
+
+GET http://localhost:8080/carts
+
+###
+
+PATCH http://localhost:8080/carts/61894da27a651b2899c20dbc
+Content-Type: application/json
+
+{
+    "id":57,
+    "name":"bomboklat",
+    "price":100000,
+    "description":"party up!!",
+    "category":"tv",
+    "pictur1":"https://media.istockphoto.com/photos/cheering-crowd-with-hands-in-air-at-music-festival-picture-id1247853982?b=1&k=20&m=1247853982&s=170667a&w=0&h=sWNEepgWwrm1gH288XfI4uCV0xI6ZZ65aXsshxEiUv4=",
+    "pictur2":"https://media.istockphoto.com/photos/dancing-friends-picture-id501387734?b=1&k=20&m=501387734&s=170667a&w=0&h=TVaT6l5ApnSxVDgP0027JimUnUfbJYkBRCcVA2DGXg8="
+}
+
+###
+
+PATCH http://localhost:8080/carts/delete/61894da27a651b2899c20dbc

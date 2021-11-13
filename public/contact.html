@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+    <link rel="stylesheet" href="./css/contact.css">
+</head>
+<body>
+    <header id="toppage">
+        <nav class="navbar">
+            <ul>
+                <li id="lg"> <img src="https://i.ibb.co/1KLVDK0/ALM-logo.jpg" alt="alm"></li>
+                <li> <a class="link" href="shopping cart.html"> Shopping Cart &#x1f6d2</a></li>
+                <li> <a class="link" href="/"> Home Page</a></li>
+                <li> <a class="link" href="Kitchen_and_home_appliances.html"> Kitchen and home appliances</a></li>
+                <li> <a class="link" href="laptop.html"> Laptop</a></li>
+                <li> <a class="link" href="tv.html">Tv</a></li>
+                <li> <a class="link" href="washing machines and dryers.html"> Washing machines and dryers</a></li>
+                <li> <a class="link" href="contact.html"> contact</a></li>
+                <!-- <li> <a class="link" href="add_product.html"> add product</a> </li> -->
+            </ul>
+        </nav> <br><br>
+    </header>
+    <main>
+        <section>
+            <h1>Contact us</h1>
+        </section><br>
+        <div class="form">
+            <form id="forms">
+                <input class="for" id="fname" type="text"  placeholder="first name"><br>
+                <input class="for" id="lname" type="text"  placeholder="last name"><br>
+                <input class="for" id="pnumber" type="tel"  placeholder="phone numbet"><br>
+                <input class="for" id="email" type="email"  placeholder="email"><br>
+                <input class="for" id="message" type="text"  placeholder="message"><br>
+                <button type="submit">send</button>
+            </form>
+            <a href= "message.html"> <button  onclick="getPerson()">Get forms</button> </a>
+        </div>
+    </main>
+    <footer>
+        <li> <a class="link" href="add_product.html"> add product</a> </li>
+        <li> <a class="link" href="all_products.html"> all product</a> </li>
+        <li> <a class="link" href="delete_product.html"> delete product</a></li>
+        <li> <a class="link" href="update_product.html"> update product</a></li>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.min.js"
+        integrity="sha512-Idr7xVNnMWCsgBQscTSCivBNWWH30oo/tzYORviOCrLKmBaRxRflm2miNhTFJNVmXvCtzgms5nlJF4az2hiGnA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        const form = document.getElementById("forms");
+
+        form.addEventListener("submit", addPerson);
+
+        function addPerson(e) {
+            e.preventDefault();
+            const firstName = document.getElementById("fname").value;
+            const lastName = document.getElementById("lname").value;
+            const phoneNumber = document.getElementById("pnumber").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+            axios
+                .post("/contact", {
+                    firstName: firstName,
+                    lastName: lastName,
+                    phoneNumber: phoneNumber,
+                    email: email,
+                    message: message
+                })
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+         
+    </script>
+</body>
+
+</html>

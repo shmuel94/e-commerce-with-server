@@ -1,0 +1,63 @@
+body {
+    background-image: url(https://i.ibb.co/gg2VLbQ/alm-backround.jpg);
+    margin:0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.navbar {
+    background-color:rgb(22, 80, 156);
+    padding: 10px 10px;
+    flex-direction: row;
+    align-content: center;
+    flex-shrink: 1;
+    justify-content: flex-end;
+}
+li {
+    display: inline;
+    padding: 2%;
+    text-decoration: none;
+    color: gold;
+    font-size: 18px;
+}
+a{
+    text-decoration: none;
+    color: gold;
+}
+h1{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 2px 2px 2px rgba(88, 88, 88, 0.904);
+    color: rgb(0, 26, 255);
+}
+
+.form {
+    padding: 15px;
+    font-size: 40px;
+    text-align: start;
+    color: var(--formcolor);
+    background-color: rgba(252, 252, 252, 0.671);
+    grid-gap: 5px;
+    border: ridge;
+    box-sizing: border-box;
+    width: 25%;
+    margin-left: 42%;
+}
+
+#messageTable , #messageTable th , .messageTableRaw  td {
+    margin-left: 30%;
+    margin-top: 7%;
+    border:1px solid black;
+     background-color: rgba(255, 255, 255, 0.8);
+     text-align: center;
+     font-size: 18px;  
+}
+footer{
+    background-color:rgb(22, 80, 156);
+    padding: 10px 10px;
+    flex-direction: row;
+    align-content: center;
+    flex-shrink: 1;
+    justify-content: flex-end;
+  }

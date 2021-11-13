@@ -1,0 +1,82 @@
+body {
+    background-image: url(https://i.ibb.co/gg2VLbQ/alm-backround.jpg);
+    margin:0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.navbar {
+    background-color:rgb(22, 80, 156);
+    padding: 10px 10px;
+    flex-direction: row;
+    align-content: center;
+    flex-shrink: 1;
+    justify-content: flex-end;
+}
+li {
+    display: inline;
+    padding: 2%;
+    text-decoration: none;
+    color: gold;
+    font-size: 18px;
+}
+a{
+    text-decoration: none;
+    color: gold;
+}
+h1{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 2px 2px 2px rgba(88, 88, 88, 0.904);
+    color: rgb(0, 26, 255);
+}
+#linktohead {
+    margin-left: 85%;
+    font-size: 70px;
+    border-radius: 100%;
+    position: fixed;
+    bottom: 0;
+    right: 1;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.904);
+}
+#container {
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 2rem;
+    font-size: 13px;
+    font-weight:600;
+}
+  
+#container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid black;
+    text-align: center;
+    font-size: 18px;
+}
+
+#container > div:hover {
+    background-color:  rgb(255, 255, 255);
+    box-shadow: 20px 20px 20px rgb(6, 50, 107);
+
+}
+.imgs{
+    width: 120px;
+    transition: width 2s;
+}
+.imgs:hover{
+    width: 160px;
+    /* transition: 1s; */
+}
+footer{
+    background-color:rgb(22, 80, 156);
+    padding: 10px 10px;
+    flex-direction: row;
+    align-content: center;
+    flex-shrink: 1;
+    justify-content: flex-end;
+  }

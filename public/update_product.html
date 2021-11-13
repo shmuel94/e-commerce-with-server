@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update product</title>
+    <link rel="stylesheet" href="./css/update_product.css">
+</head>
+
+<body>
+    <header id="toppage">
+        <nav class="navbar">
+            <ul>
+                <li id="lg"> <img src="https://i.ibb.co/1KLVDK0/ALM-logo.jpg" alt="alm"></li>
+                <li> <a class="link" href="shopping cart.html"> Shopping Cart &#x1f6d2</a></li>
+                <li> <a class="link" href="/"> Home Page</a></li>
+                <li> <a class="link" href="Kitchen_and_home_appliances.html"> Kitchen and home appliances</a></li>
+                <li> <a class="link" href="laptop.html"> Laptop</a></li>
+                <li> <a class="link" href="tv.html">Tv</a></li>
+                <li> <a class="link" href="washing machines and dryers.html"> Washing machines and dryers</a></li>
+                <li> <a class="link" href="contact.html"> contact</a></li>
+            </ul>
+        </nav> <br><br>
+    </header>
+    <main>
+        <section>
+            <h1>Update products</h1>
+        </section><br>
+        <section class="pform">
+            <form id="pformss">
+                <input id="pid" type="text" placeholder="id"><br>
+                <input id="name" type="text" placeholder="name"><br>
+                <input id="price" type="number" placeholder="price"><br>
+                <input id="des" type="text" placeholder="description"><br>
+                <!-- <input id="category" type="text" placeholder="category"><br> -->
+                <label for="category">Choose a category:</label><br>
+                <select name="category" id="category">
+                    <option value="washing machines and dryers">washing machines and dryers</option>
+                    <option value="tv">tv</option>
+                    <option value="laptop">laptop</option>
+                    <option value="Kitchen and home appliances">Kitchen and home appliances</option>
+                <input id="img1" type="url" placeholder="pictur1"><br>
+                <input id="img2" type="url" placeholder="pictur2"><br>
+                <button type="submit">send</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <li> <a class="link" href="add_product.html"> add product</a> </li>
+        <li> <a class="link" href="all_products.html"> all product</a> </li>
+        <li> <a class="link" href="delete_product.html"> delete product</a></li>
+        <li> <a class="link" href="update_product.html"> update product</a></li>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.min.js"
+        integrity="sha512-Idr7xVNnMWCsgBQscTSCivBNWWH30oo/tzYORviOCrLKmBaRxRflm2miNhTFJNVmXvCtzgms5nlJF4az2hiGnA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+    <script src="./js/kitchen and home appliances.js"></script>
+    <script src="./js/laptop.js"></script>
+    <script src="./js/washing machines and dryers.js"></script>
+    <script src="./js/tv.js"></script>
+    <script src="./js/update_product.js"></script>
+</body>
+
+</html>
