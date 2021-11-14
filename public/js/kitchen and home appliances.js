@@ -30,7 +30,7 @@ axios
       <br>price:${Kitchen[i].price}<br>description:${Kitchen[i].description}
       <br>category:${Kitchen[i].category}</div>
       <br><button class="btn" onclick="add(${i})">Add to cart</button>
-      <br><form method = "get" action="update_product.html"> <button class="btn" type = "submit" name = urlNum value = "${Kitchen[i].id}"> update</button></form></div>`
+      <br><form method="get" action="update_product.html"><button class="btn" type ="submit" name="urlNum" value="${Kitchen[i]._id}">update</button></form></div>`;
     }
   })
   .catch((err) => {

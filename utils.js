@@ -5,12 +5,12 @@ const MongoDB = require("mongodb"),
     // axios = require("axios"),
     MongoClient = MongoDB.MongoClient,
     ObjectId = MongoDB.ObjectId,
-    mongoURL = process.env.MONGOURL,
+    mongoURL = process.env.MONGOURL || "mongodb://localhost:27017/",
     dbName = "E-commerce",
     collectionContact = "contact",
     collectionCart = "carts",
     collectionProduct = "products";
-    // || "mongodb://localhost:27017/"
+    // 
 
 // function insertproducts(req, res) {
     // MongoClient.connect(mongoURL, function (err, db) {
@@ -134,24 +134,24 @@ function updateProduct(req, res) {
         dbo
           .collection(collectionProduct)
           .findOneAndUpdate(
-            { id},
+            { _id: ObjectId(id)},
             { $set: productToUpdate },
             function (err, resUpdated) {
               if (err) throw err;
               res.send(resUpdated);
     
-            //   if (
-            //     productToUpdate.name == undefined ||
-            //     productToUpdate.name.length == 0
-            //   ) {
-            //     return res.sendStatus(400);
-            //   }
+              if (
+                productToUpdate.name == undefined ||
+                productToUpdate.name.length == 0
+              ) {
+                return res.sendStatus(400);
+              }
     
-            //   if (resUpdated.value) {
-            //     res.sendStatus(200);
-            //   } else {
-            //     res.sendStatus(404);
-            //   }
+              if (resUpdated.value) {
+                res.sendStatus(200);
+              } else {
+                res.sendStatus(404);
+              }
     
               db.close();
             }

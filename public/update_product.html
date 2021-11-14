@@ -41,9 +41,9 @@
                     <option value="tv">tv</option>
                     <option value="laptop">laptop</option>
                     <option value="Kitchen and home appliances">Kitchen and home appliances</option>
-                <input id="img1" type="url" placeholder="pictur1"><br>
-                <input id="img2" type="url" placeholder="pictur2"><br>
-                <button type="submit">send</button>
+                    <input id="img1" type="url" placeholder="pictur1"><br>
+                    <input id="img2" type="url" placeholder="pictur2"><br>
+                    <button type="submit">send</button>
             </form>
         </section>
     </main>
@@ -56,6 +56,38 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.min.js"
         integrity="sha512-Idr7xVNnMWCsgBQscTSCivBNWWH30oo/tzYORviOCrLKmBaRxRflm2miNhTFJNVmXvCtzgms5nlJF4az2hiGnA=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+    <script>
+        const form = document.getElementById("pformss");
+        form.addEventListener("submit", updProduct);
+
+        function updProduct(e) {
+            e.preventDefault();
+            let id = document.getElementById("pid").value;
+            let name = document.getElementById("name").value;
+            let price = document.getElementById("price").value;
+            let description = document.getElementById("des").value;
+            let category = document.getElementById("category").value;
+            let pictur1 = document.getElementById("img1").value;
+            let pictur2 = document.getElementById("img2").value;
+            axios
+                .patch(`/products/${id}`, {
+                    // id: id,
+                    name: name,
+                    price: price,
+                    description: description,
+                    category: category,
+                    pictur1: pictur1,
+                    pictur2: pictur2
+                })
+                .then(function (response) {
+                    console.log(urlNum);
+                    console.log(response.data);
+                })
+                .catch(function (error) {
+                    console.log("error in update action!!");
+                });
+        }
     </script>
     <script src="./js/kitchen and home appliances.js"></script>
     <script src="./js/laptop.js"></script>
