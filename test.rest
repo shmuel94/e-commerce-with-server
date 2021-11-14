@@ -33,11 +33,16 @@ Content-Type: application/json
 
 ###
 
-PATCH http://localhost:8080/products/6181a39cd15dc271af9211b3
+PATCH http://localhost:8080/products/6181a240a8c20ef043ab3841
 Content-Type: application/json
 
 {
-    "name":"big ice machin"
+    "name":"Blender NUTRIBULLET COMBO 1600W",
+    "price":"0",
+    "description":"A blender jug with a volume of 1.8 liters",
+    "category":"Kitchen and home appliances",
+    "pictur1":"https://i.ibb.co/NmcDdcc/kaha-1-1.png",
+    "pictur2":"https://i.ibb.co/cTQTQXj/kaha-1-2.png"
 }
 
 ###

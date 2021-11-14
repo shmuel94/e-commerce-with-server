@@ -35,7 +35,8 @@ function deleteProduct(i) {
         .patch(`/carts/delete`,{id:data[i].id})
         .then(function (response) {
             // let data = response.data[0].cart
-            window.setTimeout(function(){location.reload()},0);
+            alert("delete is complited!!!");
+            // window.setTimeout(function(){location.reload()},0);
             console.log(response);
         })
         .catch(function (error) {

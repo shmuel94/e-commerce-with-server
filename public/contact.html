@@ -42,7 +42,7 @@
     <footer>
         <li> <a class="link" href="add_product.html"> add product</a> </li>
         <li> <a class="link" href="all_products.html"> all product</a> </li>
-        <li> <a class="link" href="delete_product.html"> delete product</a></li>
+        <!-- <li> <a class="link" href="delete_product.html"> delete product</a></li> -->
         <li> <a class="link" href="update_product.html"> update product</a></li>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.min.js"
@@ -69,6 +69,7 @@
                     message: message
                 })
                 .then(function (response) {
+                    alert("the message was added");
                     console.log(response);
                 })
                 .catch(function (error) {

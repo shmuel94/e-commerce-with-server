@@ -1,5 +1,4 @@
 var Kitchen = [];
-let form = document.getElementById("pformss");
 
 axios
   .get("/products")
@@ -9,7 +8,9 @@ axios
     for (let i = 0; i < data.length; i++) {
       if (data[i].category == "Kitchen and home appliances") {
         for (let j = -1; j < Kitchen.length; j++) {
+         
           kaha = {
+            _id: data[i]._id,
             id: data[i].id,
             name: data[i].name,
             price: data[i].price,
@@ -30,25 +31,28 @@ axios
       <br>price:${Kitchen[i].price}<br>description:${Kitchen[i].description}
       <br>category:${Kitchen[i].category}</div>
       <br><button class="btn" onclick="add(${i})">Add to cart</button>
-      <br><form method="get" action="update_product.html"><button class="btn" type ="submit" name="urlNum" value="${Kitchen[i]._id}">update</button></form></div>`;
+      <br><form method="get" action="update_product.html"><button class="btn" name="update" value="${Kitchen[i]._id}">update</button></form>
+      <button onclick ="deletePd('${Kitchen[i]._id}')" class="btn"> delete</button></div>`;
     }
+
   })
   .catch((err) => {
-    console.log(err);
+    console.log("err");
   })
-console.log(Kitchen);
+// console.log(Kitchen);
 
 function add(i) {
   axios.patch(`/carts/update`, {
-      pictur1: Kitchen[i].pictur1,
-      pictur2: Kitchen[i].pictur2,
-      id: Kitchen[i].id,
-      name: Kitchen[i].name,
-      price: Kitchen[i].price,
-      description: Kitchen[i].description,
+    pictur1: Kitchen[i].pictur1,
+    pictur2: Kitchen[i].pictur2,
+    id: Kitchen[i].id,
+    name: Kitchen[i].name,
+    price: Kitchen[i].price,
+    description: Kitchen[i].description,
       category: Kitchen[i].category
     })
     .then(function (response) {
+      alert("the product added to the cart");
       console.log(response);
     })
     .catch(function (error) {

@@ -31,6 +31,7 @@ for (let i = 0; i < data.length; i++) {
   if(data[i].category == "washing machines and dryers"){
     for (let j = -1; j < washing.length; j++) {
       wmad = {
+        _id: data[i]._id,
         id: data[i].id,
         name: data[i].name,
         price: data[i].price,
@@ -43,7 +44,8 @@ for (let i = 0; i < data.length; i++) {
   } 
 }
 for (let i = 0; i < washing.length; i++) {
-  divs6.innerHTML +=`<div id="container{i}"><div><img class="imgs" src="${washing[i].pictur1}"><img class="imgs" src="${washing[i].pictur2}"><br>id:${washing[i].id}<br>name:${washing[i].name}<br>price:${washing[i].price}<br>description:${washing[i].description}<br>category:${washing[i].category}</div><br><button class="btn"  onclick="add(${i})">Add to cart</button></div>`
+  divs6.innerHTML +=`<div id="container{i}"><div><img class="imgs" src="${washing[i].pictur1}"><img class="imgs" src="${washing[i].pictur2}"><br>id:${washing[i].id}<br>name:${washing[i].name}<br>price:${washing[i].price}<br>description:${washing[i].description}<br>category:${washing[i].category}</div><br><button class="btn"  onclick="add(${i})">Add to cart</button> <br><form method="get" action="update_product.html"><button class="btn" name="update" value="${washing[i]._id}">update</button></form>
+  <button onclick ="deletePd('${washing[i]._id}')" class="btn"> delete</button></div>`
 }
 })
 .catch((err)=>{
@@ -53,6 +55,8 @@ for (let i = 0; i < washing.length; i++) {
 function add(i){
   axios.patch(`/carts/update`, {pictur1:washing[i].pictur1, pictur2:washing[i].pictur2, id:washing[i].id, name:washing[i].name, price:washing[i].price, description:washing[i].description, category:washing[i].category})
   .then(function (response) {
+    alert("the product added to the cart");
+
     console.log(response);
 })
 .catch(function (error) {

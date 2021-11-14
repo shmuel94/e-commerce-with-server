@@ -5,7 +5,7 @@ const MongoDB = require("mongodb"),
     // axios = require("axios"),
     MongoClient = MongoDB.MongoClient,
     ObjectId = MongoDB.ObjectId,
-    mongoURL = process.env.MONGOURL || "mongodb://localhost:27017/",
+    mongoURL = "mongodb://localhost:27017/",
     dbName = "E-commerce",
     collectionContact = "contact",
     collectionCart = "carts",
@@ -138,21 +138,7 @@ function updateProduct(req, res) {
             { $set: productToUpdate },
             function (err, resUpdated) {
               if (err) throw err;
-              res.send(resUpdated);
-    
-              if (
-                productToUpdate.name == undefined ||
-                productToUpdate.name.length == 0
-              ) {
-                return res.sendStatus(400);
-              }
-    
-              if (resUpdated.value) {
-                res.sendStatus(200);
-              } else {
-                res.sendStatus(404);
-              }
-    
+              res.send(resUpdated)
               db.close();
             }
           );
