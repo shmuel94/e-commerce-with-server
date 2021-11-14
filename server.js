@@ -3,7 +3,7 @@ const express = require("express"),
     app = express(),
     path = require('path'),
     publicPath = path.join(__dirname, "public"),
-    PORT =  8080,
+    PORT = process.env.PORT || 8080,
     utils = require("./utils");
     MongoDB = require("mongodb");
     app.set("view engine", "html");
